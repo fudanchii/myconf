@@ -8,6 +8,7 @@ set smartindent
 set expandtab
 set showmatch
 set incsearch
+set hlsearch
 set ruler
 set noswapfile
 set nobackup
@@ -19,18 +20,17 @@ set nolazyredraw
 set so=7
 set gfn=Consolas\ 14
 if has('gui_running')
+    "this is on purpose, I may alternate the background whenever I like.
     set background=dark
 else
+    let g:solarized_termtrans = 1
     set background=dark
 endif
 colorscheme solarized
 filetype plugin indent on
 
-imap <F6> <Esc>:NERDTreeToggle<CR><F7>
-map <F6> :NERDTreeToggle<CR><F7>
-
-imap <F7> <Esc>:TMiniBufExplorer<cr>
-map <F7> :TMiniBufExplorer<cr>
+imap <F6> <Esc>:NERDTreeToggle<CR>
+map <F6> :NERDTreeToggle<CR>
 
 map :tn :tabn<cr>
 map :tp :tabp<cr>
@@ -44,12 +44,4 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplorerMoreThanOne = 0
-let g:miniBufExplModSelTarget = 0
-let g:miniBufExplUseSingleClick = 1
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplVSplit = 25
-let g:miniBufExplSplitBelow=1
 
