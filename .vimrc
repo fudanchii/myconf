@@ -38,6 +38,8 @@ map <C-c> :tabclose<cr>
 map :tm :tabmove<cr>
 map :te :tabedit 
 
+au FileType python syn keyword pythonDecorator self
+
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
