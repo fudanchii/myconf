@@ -21,7 +21,7 @@ set so=7
 set gfn=Consolas\ 14
 if has('gui_running')
     "this is on purpose, I may alternate the background whenever I like.
-    set background=dark
+    set background=light
 else
     let g:solarized_termtrans = 1
     set background=dark
@@ -29,16 +29,14 @@ endif
 colorscheme solarized
 filetype plugin indent on
 
-imap <F6> <Esc>:NERDTreeToggle<CR>
 map <F6> :NERDTreeToggle<CR>
+imap <F6> <Esc>:NERDTreeToggle<CR>
 
-map :tn :tabn<cr>
-map :tp :tabp<cr>
-map :te :tabedit
-map :tc :tabclose<cr>
-map :tm :tabmove
-
-au FileType python syn keyword pythonDecorator self
+map <C-n> :tabn<cr>
+map <C-p> :tabp<cr>
+map <C-c> :tabclose<cr>
+map :tm :tabmove<cr>
+map :te :tabedit 
 
 set guioptions-=m
 set guioptions-=T

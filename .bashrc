@@ -8,7 +8,6 @@ fi
 
 PATH=$PATH:/opt/clang/bin
 PATH=/opt/node/bin:$PATH
-PATH=$HOME/bin:$PATH
 PATH=/opt/qemu/bin:$PATH
 PATH=/opt/deadbeef/bin:$PATH
 export NODE_PATH=$HOME/node_modules:/opt/node/bin:/opt/node/lib/node_modules
