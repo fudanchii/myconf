@@ -1,0 +1,9 @@
+[ui]
+username=Nurahmadie <nurahmadie@gmail.com>
+
+[extensions]
+rebase =
+prompt = /home/adie/linux-stub/hg-prompt/prompt.py
+mq =
+fetch =
+review = /home/adie/linux-stub/hg-review/review/
