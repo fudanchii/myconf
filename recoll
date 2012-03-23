@@ -5,3 +5,4 @@ cp -r ~/.vim ./
 cp ~/.tmux.conf ./
 cp ~/.profile ./
 cp ~/.bashrc ./
+cp ~/prompt.bash ./
