@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/adie/js/app/app'
 let g:netrw_dirhist_2='/home/adie/js/sandbox'
 let g:netrw_dirhist_3='/home/adie/js/app/services'
 let g:netrw_dirhist_4='/home/adie/js/app/app'
+let g:netrw_dirhist_5='/home/adie/js/plurk.js/node_modules/oauth'

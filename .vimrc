@@ -17,11 +17,13 @@ set autoread
 set wildmenu
 set hid
 set nolazyredraw
+set foldmethod=indent
+set foldnestmax=10
+set foldlevel=1
 set so=7
-set gfn=Consolas\ 14
 if has('gui_running')
-    "this is on purpose, I may alternate the background whenever I like.
     set background=light
+    set gfn=Consolas\ 14
 else
     let g:solarized_termtrans = 1
     set background=dark
@@ -29,8 +31,8 @@ endif
 colorscheme solarized
 filetype plugin indent on
 
-map <F6> :NERDTreeToggle<CR>
-imap <F6> <Esc>:NERDTreeToggle<CR>
+map <F9> :NERDTreeToggle<cr>
+imap <F9> <Esc>:NERDTreeToggle<cr>
 
 map <C-n> :tabn<cr>
 map <C-p> :tabp<cr>
