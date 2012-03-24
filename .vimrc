@@ -18,8 +18,9 @@ set wildmenu
 set hid
 set nolazyredraw
 set foldmethod=indent
-set foldnestmax=10
+set foldnestmax=1
 set foldlevel=1
+set nofoldenable
 set so=7
 if has('gui_running')
     set background=light
