@@ -20,6 +20,7 @@ set nolazyredraw
 set foldmethod=indent
 set foldnestmax=4
 set foldlevel=3
+set clipboard=unnamedplus
 set so=7
 if has('gui_running')
     set background=light
