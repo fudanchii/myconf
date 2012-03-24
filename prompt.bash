@@ -29,6 +29,3 @@ vcs_prompt_info () {
 
 PS1="\[\033[0;31m\]\$(vcs_mod)\[\033[00m\]\$(vcs_prompt_info):\[\033[01;36m\]\W \[\033[01;35m\]\$(prompt_char)\[\033[00m\] "
 
-if [ $UID -eq 0 ]; then
-    PS1="@\[\033[01;37m\]\h:\[\033[01;36m\]\W \[\033[00m\]# "
-fi
