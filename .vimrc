@@ -19,14 +19,13 @@ set hid
 set nolazyredraw
 set foldmethod=indent
 set foldnestmax=1
-set foldlevel=1
 set nofoldenable
 set so=7
 if has('gui_running')
     set background=light
     set gfn=Consolas\ 14
 else
-    let g:solarized_termtrans = 1
+    let g:solarized_termtrans=1
     set background=dark
 endif
 colorscheme solarized
