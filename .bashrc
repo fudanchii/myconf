@@ -14,4 +14,8 @@ PATH=$HOME/android-sdk-linux_x86/platform-tools:$PATH
 alias ls="ls --color"
 alias grep="grep --color"
 
+alias an="locate -e -i -d $HOME/ani.db:$HOME/ani_local.db"
+alias andb="updatedb -l 0 -o $HOME/ani.db -U /media/HD-PCU2/animu"
+alias anldb="updatedb -l 0 -o $HOME/ani_local.db -U /media/data/Anime"
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
