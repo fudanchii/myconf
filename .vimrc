@@ -29,8 +29,8 @@ else
     let g:solarized_termtrans=1
     set background=dark
 endif
-colorscheme solarized
 filetype plugin indent on
+colorscheme solarized
 
 map <F9> :NERDTreeToggle<cr>
 imap <F9> <Esc>:NERDTreeToggle<cr>
