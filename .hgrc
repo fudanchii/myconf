@@ -1,9 +1,28 @@
 [ui]
-username=Nurahmadie <nurahmadie@gmail.com>
+username = Nurahmadie <nurahmadie@gmail.com>
+verbose = true
 
 [extensions]
 rebase =
-prompt = /home/adie/linux-stub/hg-prompt/prompt.py
 mq =
-fetch =
+graphlog =
+churn =
 review = /home/adie/linux-stub/hg-review/review/
+
+[bookmarks]
+track.current = True
+
+[alias]
+st = status
+up = update
+co = update
+cl = clone
+ci = commit
+p = pull
+rb = rebase
+br = branch
+bs = branches
+bm = bookmark
+book = bookmark
+bs = bookmarks
+books = bookmarks
