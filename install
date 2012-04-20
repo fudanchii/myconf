@@ -6,5 +6,7 @@ cp .bashrc ~/
 cp .profile ~/
 cp .tmux.conf ~/
 cp prompt.bash ~/
+cp .hgrc ~/
+cp .gitconfig ~/
 
 source ~/.profile
