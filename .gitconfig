@@ -1,0 +1,24 @@
+[user]
+	name = Nurahmadie
+	email = nurahmadie@gmail.com
+[color]
+	ui = auto
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1050x585+0+0
+	main-window-view = HistoryView
+	history-view-vpane-position = 266
+	file-view-vpane-position = 521
+	file-view-hpane-position = 245
+
+[alias]
+    cl = clone
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    bv = branch -v
+    rb = rebase
+    hist = log --pretty=format:\"%h %ad | [%an] %s%d\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
