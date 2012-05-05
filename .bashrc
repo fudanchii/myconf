@@ -26,6 +26,7 @@ alias anldb="updatedb -l 0 -o $HOME/ani_local.db -U /media/data/Anime"
 
 alias hglog="hg log | less"
 alias gi="git"
+alias gt="git"
 
 if [[ -x /usr/bin/dircolors ]]; then
     [[ -f $HOME/.dircolors ]] && eval `dircolors $HOME/.dircolors`
