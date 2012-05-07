@@ -7,7 +7,6 @@ rebase =
 mq =
 graphlog =
 churn =
-review = /home/adie/linux-stub/hg-review/review/
 
 [bookmarks]
 track.current = True
@@ -18,11 +17,13 @@ up = update
 co = update
 cl = clone
 ci = commit
-p = pull
+pl = pull
+ps = push
 rb = rebase
 br = branch
 bs = branches
 bm = bookmark
+bms = bookmarks
 book = bookmark
-bs = bookmarks
 books = bookmarks
+gl = glog
