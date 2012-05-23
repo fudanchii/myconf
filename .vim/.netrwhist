@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/adie/linux-stub/fun.coffee'
 let g:netrw_dirhist_2='/home/adie/.ansible'
 let g:netrw_dirhist_3='/home/adie/js/app/app'
 let g:netrw_dirhist_4='/home/adie/ruby/rails/moebooru/config'
+let g:netrw_dirhist_5='/home/adie/lab/karakuri/server'
+let g:netrw_dirhist_6='/home/adie/lab/karakuri/views'
+let g:netrw_dirhist_7='/home/adie/lab/fabsandbox/fudanchii.net'
