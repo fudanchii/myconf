@@ -5,8 +5,8 @@ verbose = true
 [extensions]
 rebase =
 mq =
-graphlog =
 churn =
+graphlog =
 
 [bookmarks]
 track.current = True
@@ -26,4 +26,8 @@ bm = bookmark
 bms = bookmarks
 book = bookmark
 books = bookmarks
-gl = glog
+lp = log --graph --template '{rev}:{node|short}@{branch}\t[{phase}] {desc}\n'
+
+
+[tortoisehg]
+editor = gvim
