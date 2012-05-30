@@ -32,7 +32,7 @@ if [[ -x /usr/bin/dircolors ]]; then
     [[ -f $HOME/.dircolors ]] && eval `dircolors $HOME/.dircolors`
 fi
 
-if [[ -x `which grc` ]]; then
+if [[ -x `which grc 2> /dev/null` ]]; then
     alias colourify="grc --colour=auto"
     alias configure="colourify ./configure"
     alias diff="colourify diff"
