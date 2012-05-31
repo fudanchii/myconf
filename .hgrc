@@ -11,6 +11,9 @@ graphlog =
 [bookmarks]
 track.current = True
 
+[hostfingerprints]
+bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
+
 [alias]
 st = status
 up = update
@@ -24,9 +27,9 @@ br = branch
 bs = branches
 bm = bookmark
 bms = bookmarks
-book = bookmark
-books = bookmarks
-lp = log --graph --template '{rev}:{node|short}@{branch}\t[{phase}] {desc}\n'
+bk = bookmark
+bks = bookmarks
+lp = log --graph --template '{rev}:{node|short} {branches}\t[{phase}]{desc|firstline}\n'
 
 
 [tortoisehg]
