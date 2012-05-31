@@ -30,7 +30,7 @@ bm = bookmark
 bms = bookmarks
 bk = bookmark
 bks = bookmarks
-lp = log --graph --template '{rev}:{node|short}{branches}: {tags}{bookmarks}\n[{phase}] {author|emailuser}: {desc|firstline|fill68}\n\n'
+lp = log --graph --template '{rev}:{node|short}:{branches} {tags} {bookmarks}\n[{phase}] {author|emailuser}: {desc|firstline|fill68}\n\n'
 
 
 [tortoisehg]
