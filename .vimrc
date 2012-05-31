@@ -22,24 +22,31 @@ set foldnestmax=4
 set foldlevel=3
 set clipboard=unnamedplus
 set so=7
+
+colorscheme solarized
+filetype plugin indent on
+
 if has('gui_running')
     set background=light
-    set gfn=Consolas\ 14
+    if has('unix')
+        set gfn=Consolas\ 14
+    else
+        set gfn=Consolas:h14
+    endif
 else
     let g:solarized_termtrans=1
     set background=dark
 endif
-filetype plugin indent on
-colorscheme solarized
 
 map <F9> :NERDTreeToggle<cr>
 imap <F9> <Esc>:NERDTreeToggle<cr>
 
 map <C-n> :tabn<cr>
 map <C-p> :tabp<cr>
-map <C-c> :tabclose<cr>
+map <C-x> :tabclose<cr>
 map :tm :tabmove<cr>
 map :te :tabedit 
+map <C-c>d :lcd%:p:h<cr>
 
 au FileType python syn keyword pythonDecorator self
 
