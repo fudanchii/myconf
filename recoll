@@ -8,3 +8,4 @@ cp ~/.bashrc ./
 cp ~/prompt.bash ./
 cp ~/.hgrc ./
 cp ~/.gitconfig ./
+cp ~/.dircolors ./

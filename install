@@ -8,5 +8,6 @@ cp .tmux.conf ~/
 cp prompt.bash ~/
 cp .hgrc ~/
 cp .gitconfig ~/
+cp .dircolors ~/
 
-source ~/.profile
+echo "Now invoke: source ~/.profile"
