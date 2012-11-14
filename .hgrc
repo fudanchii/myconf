@@ -7,12 +7,17 @@ rebase =
 mq =
 churn =
 graphlog =
+color =
+pager =
 
 [bookmarks]
 track.current = True
 
 [hostfingerprints]
 bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
+
+[pager]
+pager = LESS='FSRX' less
 
 [alias]
 st = status
@@ -30,7 +35,7 @@ bms = bookmarks
 bk = bookmark
 bks = bookmarks
 logp = log --graph --template '{rev}:{node|short}:{branches} {tags} {bookmarks}\n[{phase}] {author|emailuser}: {desc|firstline|fill68}\n\n'
-lp = !$HG logp|less
+lp = !$HG logp | less
 untrack = rm -Af
 utr = untrack
 
