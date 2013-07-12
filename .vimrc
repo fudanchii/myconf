@@ -17,9 +17,9 @@ set autoread
 set wildmenu
 set hid
 set nolazyredraw
-set foldmethod=indent
-set foldnestmax=4
-set foldlevel=3
+"set foldmethod=indent
+"#set foldnestmax=4
+"#set foldlevel=3
 set clipboard=unnamedplus
 set so=7
 
@@ -38,6 +38,8 @@ else
     set background=dark
 endif
 
+map Q   <nop>
+map :Q   :q
 map <F9> :NERDTreeToggle<cr>
 imap <F9> <Esc>:NERDTreeToggle<cr>
 

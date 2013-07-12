@@ -2,6 +2,11 @@ _OS_=${OSTYPE//[0-9.]/}
 
 PS1="\u\[\033[00;32m\]@\h\[\033[00m\]:\[\033[00;34m\]\W \[\033[00;35m\]\$\[\033[00m\] "
 
+function orly {
+    CMD=`history 2 | head -n 1 | sed 's/^[ ]*[0-9]*//'`
+    sudo $CMD
+}
+
 export PAGER="less"
 export EDITOR="vim"
 
@@ -51,6 +56,8 @@ alias ll="ls -l"
 alias vi="vim"
 alias psaxuw="ps axuw"
 
+alias zp="curl 'http://0paste.com/pastes.txt' -F 'paste[paste]=<-'"
+
 alias an="locate -e -i -d $HOME/ani.db:$HOME/ani_local.db"
 alias andb="updatedb -l 0 -o $HOME/ani.db -U /media/HD-PCU2/animu"
 alias anldb="updatedb -l 0 -o $HOME/ani_local.db -U /media/data/Anime"
@@ -61,3 +68,4 @@ alias gt="git"
 alias curl="curl -k"
 alias sudo="sudo "
 
+PATH=$HOME/bin:$PATH
