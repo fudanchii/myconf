@@ -1,9 +1,12 @@
-. "$HOME/prompt.bash"
+_OS_=${OSTYPE//[0-9.]/}
+
+PS1="\u\[\033[00;32m\]@\h\[\033[00m\]:\[\033[00;34m\]\W \[\033[00;35m\]\$\[\033[00m\] "
 
 export PAGER="less"
 export EDITOR="vim"
 
 export PYTHONPATH=$HOME/python_modules
+
 export NODE_PATH=$HOME/node_modules:/opt/node/bin:/opt/node/lib/node_modules
 export GOROOT=$HOME/linux-stub/go
 export GOPATH=$HOME/golang:$GOROOT
@@ -15,9 +18,37 @@ PATH=/opt/deadbeef/bin:$PATH
 PATH=$PATH:$GOROOT/bin
 PATH=$HOME/android-sdk-linux_x86/platform-tools:$PATH
 
+if [[ -x /usr/bin/dircolors ]]; then
+    [[ -f $HOME/.dircolors ]] && eval `dircolors $HOME/.dircolors`
+fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+
+function linux_alias {
+    alias ls="ls -F --color"
+    alias grep="grep --color"
+}
+
+function openbsd_alias {
+    alias ls="colorls -FG"
+    alias tar="gtar"
+    alias omake="/usr/bin/make"
+    alias make="gmake"
+}
+
+case $_OS_ in
+linux-gnu) linux_alias
+           ;;
+openbsd)   openbsd_alias
+           ;;
+esac
+
+alias ll="ls -l"
+
 alias vi="vim"
-alias ls="ls --color"
-alias grep="grep --color"
 alias psaxuw="ps axuw"
 
 alias an="locate -e -i -d $HOME/ani.db:$HOME/ani_local.db"
@@ -27,27 +58,6 @@ alias anldb="updatedb -l 0 -o $HOME/ani_local.db -U /media/data/Anime"
 alias hglog="hg log | less"
 alias gi="git"
 alias gt="git"
+alias curl="curl -k"
+alias sudo="sudo "
 
-if [[ -x /usr/bin/dircolors ]]; then
-    [[ -f $HOME/.dircolors ]] && eval `dircolors $HOME/.dircolors`
-fi
-
-if [[ -x `which grc 2> /dev/null` ]]; then
-    alias colourify="grc --colour=auto"
-    alias configure="colourify ./configure"
-    alias diff="colourify diff"
-    alias make="colourify make"
-    alias gcc="colourify gcc"
-    alias g++="colourify g++"
-    alias as="colourify as"
-    alias gas="colourify gas"
-    alias ld="colourify ld"
-    alias netstat="colourify netstat"
-    alias ping="colourify ping"
-    alias traceroute="colourify /usr/sbin/traceroute"
-    alias tail="grc tail"
-fi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
