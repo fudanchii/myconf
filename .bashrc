@@ -1,6 +1,6 @@
 _OS_=${OSTYPE//[0-9.]/}
 
-PS1="\u\[\033[00;32m\]@\h\[\033[00m\]:\[\033[00;34m\]\W \[\033[00;35m\]\$\[\033[00m\] "
+PS1='\u\[\033[00;32m\]@\h\[\033[00m\]:\[\033[00;34m\]\W \[\033[00;35m\]\$\[\033[00m\] '
 
 function orly {
     CMD=`history 2 | head -n 1 | sed 's/^[ ]*[0-9]*//'`
@@ -27,9 +27,6 @@ if [[ -x /usr/bin/dircolors ]]; then
     [[ -f $HOME/.dircolors ]] && eval `dircolors $HOME/.dircolors`
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 
 function linux_alias {
@@ -44,10 +41,10 @@ function openbsd_alias {
     alias make="gmake"
 }
 
-case $_OS_ in
-linux-gnu) linux_alias
+case `uname` in
+Linux) linux_alias
            ;;
-openbsd)   openbsd_alias
+OpenBSD)   openbsd_alias
            ;;
 esac
 
@@ -68,4 +65,5 @@ alias gt="git"
 alias curl="curl -k"
 alias sudo="sudo "
 
-PATH=$HOME/bin:$PATH
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
