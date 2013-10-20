@@ -13,15 +13,14 @@ export EDITOR="vim"
 export PYTHONPATH=$HOME/python_modules
 
 export NODE_PATH=$HOME/node_modules:/opt/node/bin:/opt/node/lib/node_modules
-export GOROOT=$HOME/linux-stub/go
-export GOPATH=$HOME/golang:$GOROOT
+export GOROOT=/opt/go
+export GOPATH=$HOME/golang
 
 PATH=$PATH:/opt/clang/bin
 PATH=/opt/node/bin:$PATH
-PATH=/opt/qemu/bin:$PATH
-PATH=/opt/deadbeef/bin:$PATH
-PATH=$PATH:$GOROOT/bin
-PATH=$HOME/android-sdk-linux_x86/platform-tools:$PATH
+PATH=$GOROOT/bin:$PATH
+PATH=$PATH:/opt/scala/bin:$PATH
+PATH=$HOME/bin:$PATH
 
 if [[ -x /usr/bin/dircolors ]]; then
     [[ -f $HOME/.dircolors ]] && eval `dircolors $HOME/.dircolors`

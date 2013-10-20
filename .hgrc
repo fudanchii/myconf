@@ -1,6 +1,7 @@
 [ui]
 username = Nurahmadie <nurahmadie@gmail.com>
 verbose = true
+ignore = ~/.hgignore
 
 [extensions]
 rebase =
