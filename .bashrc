@@ -16,10 +16,10 @@ export NODE_PATH=$HOME/node_modules:/opt/node/bin:/opt/node/lib/node_modules
 export GOROOT=/opt/go
 export GOPATH=$HOME/golang
 
-PATH=$PATH:/opt/clang/bin
+PATH=/opt/clang/bin:$PATH
 PATH=/opt/node/bin:$PATH
 PATH=$GOROOT/bin:$PATH
-PATH=$PATH:/opt/scala/bin:$PATH
+PATH=/opt/scala/bin:$PATH
 PATH=$HOME/bin:$PATH
 
 if [[ -x /usr/bin/dircolors ]]; then
