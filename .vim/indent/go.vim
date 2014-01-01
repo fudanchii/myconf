@@ -28,3 +28,7 @@ setlocal cindent
 " Known issue: Trying to do a multi-line struct literal in a short variable
 "              declaration will not indent properly.
 setlocal cinoptions+=+0,L0,:0,l1,J1,(0,Ws,m1
+
+setlocal tabstop=4
+setlocal shiftwidth=4
+setlocal noexpandtab

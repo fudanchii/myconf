@@ -50,6 +50,11 @@ map :tm :tabmove<cr>
 map :te :tabedit 
 map <C-c>d :lcd%:p:h<cr>
 
+let g:ctrlp_map = '<c-b>'
+let g:ctrlp_working_path_mode = 'ra' 
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/.hg/*
+
 au FileType python syn keyword pythonDecorator self
 
 set guioptions-=m
@@ -57,3 +62,4 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 
+execute pathogen#infect()
