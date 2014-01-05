@@ -35,7 +35,7 @@ if has('gui_running')
     endif
 else
     let g:solarized_termtrans=1
-    set background=dark
+    set background=light
 endif
 
 map Q   <nop>
