@@ -44,6 +44,7 @@ export EDITOR="vim"
 
 [[ -d $HOME/apps/node ]] && PATH=$HOME/apps/node/bin:$PATH
 [[ -d $HOME/apps/rust ]] && PATH=$HOME/apps/rust/bin:$PATH
+[[ -d $HOME/apps/python ]] && PATH=$HOME/apps/python/bin:$PATH
 
 if [[ -d $HOME/apps/go ]]; then
     PATH=$HOME/apps/go/bin:$PATH
