@@ -13,6 +13,7 @@ pager =
 purge =
 record =
 histedit =
+hggit =
 
 [bookmarks]
 track.current = True

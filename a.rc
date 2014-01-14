@@ -1,0 +1,15 @@
+[dirs]
+target=/home/adie
+backup-dir=%(target)s/.rcbackup
+
+[rcfiles]
+hgrc=
+hgignore=
+profile=
+bashrc=
+tmux.conf=
+dircolors=
+vimrc=
+vim=
+gitconfig=
+gitignore=

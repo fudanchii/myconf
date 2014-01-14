@@ -10,12 +10,12 @@ if [[ -x /usr/bin/dircolors ]]; then
     [[ -f $HOME/.dircolors ]] && eval `dircolors $HOME/.dircolors`
 fi
 
-function linux_alias {
+linux_alias {
     alias ls="ls -F --color"
     alias grep="grep --color"
 }
 
-function openbsd_alias {
+openbsd_alias {
     alias ls="colorls -FG"
 }
 
@@ -44,13 +44,20 @@ export EDITOR="vim"
 
 [[ -d $HOME/apps/node ]] && PATH=$HOME/apps/node/bin:$PATH
 [[ -d $HOME/apps/rust ]] && PATH=$HOME/apps/rust/bin:$PATH
+[[ -d $HOME/apps/python ]] && PATH=$HOME/apps/python/bin:$PATH
 
-if [[ -d $HOME/apps/go ]]; then
+[[ -d $HOME/apps/go ]] && {
     PATH=$HOME/apps/go/bin:$PATH
     export GOROOT=$HOME/apps/go
+}
+
+if [[ -f /usr/bin/virtualenvwrapper.sh ]];
+then
+    source /usr/bin/virtualenvwrapper.sh
+else
+    [[ -f $HOME/apps/python/bin/virtualenvwrapper.sh ]] && \
+        source $HOME/apps/python/bin/virtualenvwrapper.sh
 fi
 
-[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
-
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+[[ -d $HOME/.rvm/bin ]] && PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
