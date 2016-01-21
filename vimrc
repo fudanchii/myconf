@@ -23,7 +23,7 @@ set nolazyredraw
 set clipboard=unnamedplus
 set so=7
 
-colorscheme solarized
+"colorscheme solarized
 filetype plugin indent on
 
 if has('gui_running')
@@ -35,7 +35,7 @@ if has('gui_running')
     endif
 else
     let g:solarized_termtrans=1
-    set background=light
+    set background=dark
 endif
 
 map Q   <nop>
