@@ -24,6 +24,7 @@ set clipboard=unnamedplus
 set so=7
 
 "colorscheme solarized
+colorschem h80
 filetype plugin indent on
 
 if has('gui_running')
