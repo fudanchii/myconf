@@ -17,14 +17,11 @@ set autoread
 set wildmenu
 set hid
 set nolazyredraw
-"set foldmethod=indent
-"#set foldnestmax=4
-"#set foldlevel=3
 set clipboard=unnamedplus
 set so=7
 
-"colorscheme solarized
-colorschem h80
+colorscheme xdotshare
+"colorscheme vimbrant
 filetype plugin indent on
 
 if has('gui_running')
