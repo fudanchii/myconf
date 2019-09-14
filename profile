@@ -24,3 +24,5 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 export PATH="$PATH"
+
+export PATH="$HOME/.cargo/bin:$PATH"

@@ -1,5 +1,3 @@
-execute pathogen#infect()
-
 syntax on
 set backspace=eol,start,indent
 set nocompatible
@@ -58,6 +56,8 @@ nnoremap <leader>, :tabedit $MYVIMRC<cr>
 nnoremap <leader>< :source $MYVIMRC<cr>
 nnoremap <leader>p :set paste!<cr>
 nnoremap <leader>n :noh<cr>
+nnoremap <leader>t :vert term<cr>
+nnoremap <leader>gb :Gblame<cr>
 
 vnoremap <leader>" <esc>`<i"<esc>`>i<right>"
 vnoremap <leader>' <esc>`<i'<esc>`>i<right>'
@@ -80,10 +80,6 @@ let g:go_template_use_pkg=1
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_italicize_strings=1
-
-let g:LanguageClient_serverCommands = {
-    \ 'reason': ['/home/adie/bin/reason-language-server.exe']
-    \ }
 
 let g:gruvbox_termcolors=16
 colorscheme gruvbox

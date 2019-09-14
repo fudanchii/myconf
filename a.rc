@@ -10,6 +10,5 @@ bashrc=
 tmux.conf=
 dircolors=
 vimrc=
-vim=
 gitconfig=
 gitignore=
