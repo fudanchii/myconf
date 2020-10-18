@@ -20,6 +20,7 @@ set nolazyredraw
 set clipboard=unnamedplus
 set so=7
 set laststatus=2
+set maxmempattern=5000
 
 filetype plugin indent on
 
@@ -58,12 +59,14 @@ nnoremap <leader>p :set paste!<cr>
 nnoremap <leader>n :noh<cr>
 nnoremap <leader>t :vert term<cr>
 nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>p :r! cat /tmp/vitmp<cr>
 
 vnoremap <leader>" <esc>`<i"<esc>`>i<right>"
 vnoremap <leader>' <esc>`<i'<esc>`>i<right>'
 vnoremap <leader>( <esc>`<i(<esc>`>i<right>)
 vnoremap <leader>[ <esc>`<i[<esc>`>i<right>]
 vnoremap <leader>{ <esc>`<i[<esc>`>i<right>}
+vnoremap <leader>y :w! /tmp/vitmp<cr>
 
 let g:ctrlp_map = '<c-a>'
 let g:ctrlp_working_path_mode = '' 
@@ -81,8 +84,9 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_italicize_strings=1
 
-let g:gruvbox_termcolors=16
+let g:gruvbox_termcolors=256
 colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
 
 " mod status
 set statusline=%#StatusLineTermNC#%m%*
@@ -106,6 +110,14 @@ augroup modcolor
   au TextChanged                * call ModifiedColor()
   au InsertLeave,BufWritePost   * hi statusline ctermfg=4 ctermbg=15
   au InsertEnter                * hi statusline ctermfg=2 ctermbg=0
+augroup END
+
+augroup ftype
+  au!
+  au FileType typescript setlocal shiftwidth=2 softtabstop=2 expandtab
+  au FileType typescript.tsx setlocal shiftwidth=2 softtabstop=2 expandtab
+  au FileType racket source /home/adie/.vim/scripts/RainbowParenthsis.vim
+  au FileType scheme source /home/adie/.vim/scripts/RainbowParenthsis.vim
 augroup END
 
 hi statusline ctermfg=4 ctermbg=15

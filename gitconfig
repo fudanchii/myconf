@@ -22,3 +22,6 @@
 
 [push]
 	default = nothing
+
+[merge]
+    renamelimit=7000

@@ -91,10 +91,15 @@ ret_status() {
     echo ${_status[$1]:-💩}
 }
 
-PS1='$(ret_status $?) \u\[\033[00;32m\]@\h\[\033[00m\]:\[\033[00;34m\]\W \[\033[00;35m\]\$\[\033[00m\] '
+if [ -n "$SSH_TTY" ]; then
+    PS1='\u\[\033[00;32m\]@\h\[\033[00m\]:\[\033[00;34m\]\W \[\033[00;35m\]\$\[\033[00m\] '
+else
+    PS1='$(ret_status $?) \u\[\033[00;32m\]@\h\[\033[00m\]:\[\033[00;34m\]\W \[\033[00;35m\]\$\[\033[00m\] '
+fi
 
 set -o vi
 bind -x '"\C-l":clear'
+shopt -s autocd
 
 oii() {
     CMD=`history 2 | head -n 1 | sed 's/^[ ]*[0-9]*//'`
@@ -124,27 +129,19 @@ case `uname` in
         ;;
 esac
 
-alias ll="ls -l"
-alias vi="vim"
-alias psaxuw="ps axuw"
-alias zp="curl 'http://0paste.com/pastes.txt' -F 'paste[paste]=<-'"
-alias hglog="hg log | less"
-alias gi="git"
-alias gt="git"
-alias curl="curl -k"
-alias sudo="sudo "
-alias less="less -FSRX"
+source ~/myconf/aliases
 
 export WORKON_HOME=~/Envs
 export PAGER="less"
 export EDITOR="vim"
-
 
 [[ -d /opt/git/bin ]] && PATH=/opt/git/bin:$PATH
 
 [[ -d $HOME/apps/node ]] && PATH=$HOME/apps/node/bin:$PATH
 [[ -d $HOME/apps/rust ]] && PATH=$HOME/apps/rust/bin:$PATH
 [[ -d $HOME/apps/python ]] && PATH=$HOME/apps/python/bin:$PATH
+[[ -d $HOME/apps/crystal ]] && PATH=$HOME/apps/crystal/bin:$PATH
+[[ -d $HOME/apps/racket ]] && PATH=$HOME/apps/racket/bin:$PATH
 
 [[ -d $HOME/apps/go ]] && {
     PATH=$HOME/apps/go/bin:$PATH
@@ -159,9 +156,18 @@ else
         source $HOME/apps/python/bin/virtualenvwrapper.sh
 fi
 
-[[ -d $HOME/.rvm/bin ]] && PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+export DENO_INSTALL="/home/adie/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export GUILE_LOAD_PATH=$HOME/repo/scheme-bytestructures:$GUILE_LOAD_PATH
+
+# fnm
+export PATH=/home/adie/.fnm:$PATH
+eval "`fnm env --multi`"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PATH="/home/adie/fuchsia/.jiri_root/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
