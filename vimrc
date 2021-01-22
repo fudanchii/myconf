@@ -116,6 +116,7 @@ augroup ftype
   au!
   au FileType typescript setlocal shiftwidth=2 softtabstop=2 expandtab
   au FileType typescript.tsx setlocal shiftwidth=2 softtabstop=2 expandtab
+  au FileType crystal setlocal shiftwidth=2 softtabstop=2 expandtab
   au FileType racket source /home/adie/.vim/scripts/RainbowParenthsis.vim
   au FileType scheme source /home/adie/.vim/scripts/RainbowParenthsis.vim
 augroup END
