@@ -1,6 +1,6 @@
 [user]
 	name = Nurahmadie
-    email = 177826+fudanchii@users.noreply.github.com
+    email = nurahmadie@gmail.com
 
 [color]
 	ui = auto
@@ -27,3 +27,6 @@
     renamelimit=7000
 [core]
 	compression = 3
+
+[commit]
+    gpgsign = true

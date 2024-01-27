@@ -156,18 +156,20 @@ else
         source $HOME/apps/python/bin/virtualenvwrapper.sh
 fi
 
-export DENO_INSTALL="/home/adie/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
 export GUILE_LOAD_PATH=$HOME/repo/scheme-bytestructures:$GUILE_LOAD_PATH
 
-# fnm
-export PATH=/home/adie/.fnm:$PATH
-eval "`fnm env --multi`"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-export PATH="/home/adie/fuchsia/.jiri_root/bin:$PATH"
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.cargo/bin:$PATH:$HOME/.rvm/bin"
+
+# fnm
+if [[ -d $HOME/.fnm ]]; then
+export PATH=/home/adie/.fnm:$PATH
+
+    if [[ -x $(which fnm) ]]; then
+        eval "`fnm env`"
+    fi
+fi
+
+export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/library/
+
+. "$HOME/.cargo/env"

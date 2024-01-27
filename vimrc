@@ -119,6 +119,14 @@ augroup ftype
   au FileType crystal setlocal shiftwidth=2 softtabstop=2 expandtab
   au FileType racket source /home/adie/.vim/scripts/RainbowParenthsis.vim
   au FileType scheme source /home/adie/.vim/scripts/RainbowParenthsis.vim
+  au FileType rust inoremap <C-]> <esc>:ALEGoToDefinition<cr>
+  au FileType rust nnoremap <C-]> :ALEGoToDefinition<cr>
 augroup END
 
 hi statusline ctermfg=4 ctermbg=15
+
+let g:rustfmt_autosave=1
+"autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+"autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+
+let g:ale_linters = {'rust': ['analyzer']}
